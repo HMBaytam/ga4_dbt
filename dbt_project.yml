@@ -13,6 +13,14 @@ dbt-cloud:
 # This setting configures which "profile" dbt uses for this project.
 profile: 'default'
 
+# GA4 configuration
+vars:
+  ga4:
+    source_project: "rosy-acolyte-367519" # Project that contains raw GA4 data
+    property_ids: [349576518] # Array of properties to process
+    start_date: "20250101" # Earliest date to load
+    static_incremental_days: 5 # Number of days to scan and reprocess on each run
+
 # These configurations specify where dbt should look for different types of files.
 # The `model-paths` config, for example, states that models in this project can be
 # found in the "models/" directory. You probably won't need to change these!
