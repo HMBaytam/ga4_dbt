@@ -1,1 +1,0 @@
-SELECT * FROM hacker_news LIMIT 500
