@@ -60,3 +60,9 @@ models:
         relation: true
         columns: true
         +schema: base
+    hacker_news:
+      +materialized: view
+      +persist_docs:
+        relation: true
+        columns: true
+      +schema: hacker_news
