@@ -1,6 +1,14 @@
 version: 2
 
 sources:
+  - name: hacker_news
+    description: "Hacker News Public Dataset"
+    database: bigquery-public-data
+    schema: hacker_news
+    tables:
+      - name: full
+
+
   - name: google_analytics
     description: "Google Analytics 4 export"
     database: rosy-acolyte-367519
