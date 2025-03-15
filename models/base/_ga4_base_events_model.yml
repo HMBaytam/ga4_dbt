@@ -1,10 +1,27 @@
 version: 2
 
+sources:
+  - name: google_analytics
+    description: "Google Analytics 4 export"
+    database: rosy-acolyte-367519
+    schema: analytics_349576518
+    tables:
+      - name: events
+        identifier: events_*
+        loaded_at_field: "parse_timestamp(_table_suffix, '%Y%m%d')"
+        freshness:
+          warn_after:
+            count: 24
+            period: hour
+          error_after:
+            count: 36
+            period: hour
+
 models:
 
   # please see https://support.google.com/firebase/answer/7029846?hl=en for a full description of
   # the heavily nested GA4 BigQuery Export schema.
-  - name: base_analytics__events
+  - name: ga4_base_events_table
     description: "Date-partitioned based table in which all GA4 analytics data is unified"
     columns:
       - name: event_id

@@ -1,7 +1,7 @@
 version: 2
 
 sources:
-  - name: google_analytics_live
+  - name: google_analytics
     description: "Google Analytics 4 export"
     database: rosy-acolyte-367519
     schema: analytics_349576518
