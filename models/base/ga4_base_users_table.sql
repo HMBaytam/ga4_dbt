@@ -24,7 +24,7 @@
         user_ltv,
         predictions,
         privacy_info,
-        PARSE_DATE('%Y%m%d', last_update_date) AS last_update_date
+        PARSE_DATE('%Y%m%d', last_updated_date) AS last_updated_date
     FROM
         {{ source('google_analytics', 'users') }}
 {% if is_incremental() %}

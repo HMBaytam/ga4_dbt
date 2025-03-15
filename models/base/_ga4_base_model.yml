@@ -133,7 +133,7 @@ models:
         description: "Date - the partioning key for the base table"
         tests:
           - not_null
-      - name: last_update_date
+      - name: last_updated_date
         description: "Date of the last update to the user record"
         tests:
           - not_null
