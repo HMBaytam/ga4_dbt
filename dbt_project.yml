@@ -52,4 +52,11 @@ models:
   ga4_dbt:
     # Applies to all files under models/base/
     base:
+       base:
+      +docs:
+        node_color: DarkGreen
       +materialized: table
+      +persist_docs:
+        relation: true
+        columns: true
+      +schema: base
