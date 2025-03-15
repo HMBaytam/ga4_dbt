@@ -93,3 +93,47 @@ models:
         description: >
           Structure containing information about items associated with the event
           (more ecommerce information; irrelevant to us)
+  
+  - name: ga4_base_users_table
+    description: "Date-partitioned table containing pseudonymous user data"
+    columns:
+      - name: user_id
+        description: "Identifies a (logged-in) platform user, or '0' if they were logged out"
+        tests:
+          - not_null
+          - unique
+      - name: user_info
+        description: >
+          "Structure detailing user information 
+          { last_active_time, user_first_touch_timestamp_micros, first_purchase_date }"
+      - name: device
+        description: > 
+          "Structure detailing the device used during the session
+          { operting_system, category, mobile_brand_name, mobile_model_name, unified_screen_name }"
+      - name: geo
+        description: >
+          Structure recording user geographic information
+          { continent, sub_continent, country, region, metro, city }
+          derived from visitor IP address"
+      - name: audiences
+        description: "Structure containing audience information"
+      - name: user_properties
+        description: "user_properties"
+      - name: user_ltv
+        description: >
+          A record of Lifetime Value information about the user.
+          This field is only available in next-day data.
+      - name: predictions
+        description: "Structure containing prediction information"  
+      - name: privacy_info
+        description: >
+          Structure { analytics_storage, ads_storage, users_transient_token } intended
+          to be populated when GA4 is used with 'consent mode' active
+      - name: occurrence_date
+        description: "Date - the partioning key for the base table"
+        tests:
+          - not_null
+      - name: last_update_date
+        description: "Date of the last update to the user record"
+        tests:
+          - not_null
