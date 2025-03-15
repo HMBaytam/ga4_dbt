@@ -53,10 +53,10 @@ models:
     # Applies to all files under models/base/
     base:
        base:
-      +docs:
+        +docs:
         node_color: DarkGreen
-      +materialized: table
-      +persist_docs:
+        +materialized: table
+        +persist_docs:
         relation: true
         columns: true
-      +schema: base
+        +schema: base
