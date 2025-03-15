@@ -26,7 +26,7 @@
         privacy_info,
         PARSE_DATE('%Y%m%d', last_update_date) AS last_update_date
     FROM
-        {{ source('google_analytics', 'events') }}
+        {{ source('google_analytics', 'users') }}
 {% if is_incremental() %}
     WHERE
            -- events from the 'intraday' tables should always be included
