@@ -16,7 +16,7 @@
     SELECT
         -- partitioning key:
         PARSE_DATE('%Y%m%d', occurrence_date) AS occurrence_date, -- equivalent to _table_suffix; convert to DATE type
-        users_info,
+        user_info,
         device,
         geo,
         audiences,
